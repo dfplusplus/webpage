@@ -42,3 +42,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: master # The branch the action should deploy to.
         FOLDER: public/build # The folder the action should deploy.
+        TARGET_FOLDER: public/build # Will commit into the target/build folder too (on the master branch)
