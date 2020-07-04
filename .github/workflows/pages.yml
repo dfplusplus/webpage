@@ -42,3 +42,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: public/build # The folder the action should deploy.
+        
+    - name: Copy the rest of the build files over from master
+      run: | # don't copy any sub directories
+        git branch gh-pages
+        git checkout gh-pages
+        git checkout master public/*.* 
+        git commit -m Adding contents of public folder
+        git push
