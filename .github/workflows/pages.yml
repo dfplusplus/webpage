@@ -45,8 +45,8 @@ jobs:
         
     - name: Copy the rest of the build files over from master
       run: | # don't copy any sub directories
-        git branch gh-pages
         git checkout gh-pages
-        git checkout master public/*.* 
-        git commit -m Adding contents of public folder
+        rm -rf ./public/
+        git checkout master public/*.*
+        git commit -a "Pushed from public"
         git push
