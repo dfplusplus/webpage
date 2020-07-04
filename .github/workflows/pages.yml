@@ -48,5 +48,5 @@ jobs:
         git checkout gh-pages
         rm -rf ./public/
         git checkout master public/*.*
-        git commit -a "Pushed from public"
+        git commit -m 'Pushed from public'
         git push
