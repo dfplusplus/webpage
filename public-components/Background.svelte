@@ -27,7 +27,7 @@
     background-position: center;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 700px) {
     .left {
       background-image: url("../dfblock.svg");
     }
