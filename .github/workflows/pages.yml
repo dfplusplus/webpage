@@ -50,7 +50,8 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: homepage/public # The folder the action should deploy.
+          FOLDER: homepage/public # Deploy from.
+          TARGET_FOLDER: homepage # Deploy to.
 
       - name: Push downloads to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -58,13 +59,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: downloads/public
+          TARGET_FOLDER: downloads
 
-      - name: Push downloads to Github Pages
+      - name: Push features to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: features/public
+          TARGET_FOLDER: features
 #     - name: Copy the rest of the public files over from master
 #       run: |
 #         git checkout gh-pages
