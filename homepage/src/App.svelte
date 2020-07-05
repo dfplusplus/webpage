@@ -1,6 +1,6 @@
 <script>
   import Background from "../../public-components/Background.svelte";
-  import Button from "../../public-components/Background.svelte";
+  import Button from "../../public-components/Button.svelte";
 </script>
 
 <style>
@@ -30,7 +30,7 @@
 <Background />
 
 <main>
-  <img src="../logo.png" alt="logo" />
-  <p class="subtitle">Level up your DiamondFire experience</p>
-  <Button text="Downloads" />
+  <img src="logo.png" alt="logo" />
+  <p class="subtitle">1-up your DiamondFire experience</p>
+  <Button label="Downloads" />
 </main>
