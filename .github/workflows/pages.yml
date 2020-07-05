@@ -36,18 +36,18 @@ jobs:
     - name: Run build script
       run: npm run build
       
-    - name: Push to Github Pages
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: public/build # The folder the action should deploy.
+#     - name: Push to Github Pages
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         BRANCH: gh-pages # The branch the action should deploy to.
+#         FOLDER: public # The folder the action should deploy.
         
-    - name: Copy the rest of the build files over from master
-      run: | # don't copy any sub directories
-        git checkout gh-pages
-        rm -rf ./public/
-        git checkout master public/*.*
-        git add .
-        git commit -m 'Pushed from public'
-        git push
+#     - name: Copy the rest of the public files over from master
+#       run: |
+#         git checkout gh-pages
+#         rm -rf ./public/
+#         git checkout master public/*.*
+#         git add .
+#         git commit -m 'Pushed from public folder on master'
+#         git push
