@@ -36,10 +36,13 @@ jobs:
       - name: Run build scripts
         run: |
           cd homepage
+          npm install
           npm run build
           cd ../downloads
+          npm install
           npm run build
           cd ../features
+          npm install
           npm run build
 
       - name: Push homepage to Github Pages
