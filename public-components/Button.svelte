@@ -1,1 +1,5 @@
-<p>Wait, this isn't a button!</p>
+<script>
+  export let label;
+</script>
+
+<a>{label}</a>
