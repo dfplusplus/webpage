@@ -1,5 +1,7 @@
 <script>
   export let name;
+
+  import Button from "../../public-components/Button.svelte";
 </script>
 
 <style>
@@ -24,6 +26,7 @@
   }
 </style>
 
+<Button />
 <main>
   <h1>Hello {name}!</h1>
   <p>
