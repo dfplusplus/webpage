@@ -19,6 +19,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
+        page: ['homepage','features','downloads']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,49 +31,19 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Switch to ${{matrix.page}} directory
+        run: cd ${{matrix.page}}
+
       - name: Install dependencies
         run: npm install
 
       - name: Run build scripts
-        run: |
-          cd homepage
-          npm install
-          npm run build
-          cd ../downloads
-          npm install
-          npm run build
-          cd ../features
-          npm install
           npm run build
 
-      - name: Push homepage to Github Pages
+      - name: Push to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: homepage/public # Deploy from.
-          TARGET_FOLDER: homepage # Deploy to.
-
-      - name: Push downloads to Github Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: downloads/public
-          TARGET_FOLDER: downloads
-
-      - name: Push features to Github Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: features/public
-          TARGET_FOLDER: features
-#     - name: Copy the rest of the public files over from master
-#       run: |
-#         git checkout gh-pages
-#         rm -rf ./public/
-#         git checkout master public/*.*
-#         git add .
-#         git commit -m 'Pushed from public folder on master'
-#         git push
+          FOLDER: ${{matrix.page}}/public # Deploy from.
+          TARGET_FOLDER: ${{matrix.page}} # Deploy to.
