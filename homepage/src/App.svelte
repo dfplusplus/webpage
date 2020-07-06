@@ -9,11 +9,15 @@
     margin: auto;
   }
 
-  main img {
-    width: 30%;
+  .centred {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    display: block;
+  }
+
+  main img {
+    width: 30%;
+    margin-top: 50px;
     display: block;
   }
 
@@ -30,7 +34,11 @@
 <Background />
 
 <main>
-  <img src="logo.png" alt="logo" />
+  <img src="logo.png" alt="logo" class="centred"/>
   <p class="subtitle">1-up your DiamondFire experience</p>
-  <Button label="Downloads" />
+  <Button label="Download" href="https://dfplusplus.github.io/webpage/downloads/" important/>
+  <Button label="All downloads" href="https://dfplusplus.github.io/webpage/downloads/"/>
+  <Button label="Features" href="https://dfplusplus.github.io/webpage/features/"/>
+  <Button label="Credits" href="https://dfplusplus.github.io/webpage/credits/"/>
+  <Button label="Source" href="https://github.com/dfplusplus/mod" newWindow/>
 </main>
