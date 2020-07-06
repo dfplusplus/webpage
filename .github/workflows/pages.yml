@@ -38,7 +38,7 @@ jobs:
         run: npm install
 
       - name: Run build scripts
-          npm run build
+        run: npm run build
 
       - name: Push to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
