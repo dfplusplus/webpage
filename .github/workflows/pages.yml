@@ -2,11 +2,6 @@
 
 name: CD
 
-# Sets the working directory for everything to be in its sub-directory
-defaults:
-  run:
-    working-directory: ${{matrix.page}}
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -25,6 +20,11 @@ jobs:
       matrix:
         node-version: [12.x]
         page: ['homepage','features','downloads']
+
+    # Sets the working directory for everything to be in its sub-directory
+    defaults:
+      run:
+        working-directory: ${{matrix.page}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
