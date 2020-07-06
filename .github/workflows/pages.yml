@@ -31,14 +31,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Switch to ${{matrix.page}} directory
-        run: cd ${{matrix.page}}
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd ${{matrix.page}}
+          npm install
 
       - name: Run build scripts
-        run: npm run build
+        run: |
+          cd ${{matrix.page}}
+          npm run build
 
       - name: Push to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
