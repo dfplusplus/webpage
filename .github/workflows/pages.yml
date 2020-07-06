@@ -21,6 +21,11 @@ jobs:
         node-version: [12.x]
         page: ['homepage','features','downloads']
 
+    # Sets the working directory for everything to be in its sub-directory
+    defaults:
+      run:
+        working-directory: ${{matrix.page}}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -32,14 +37,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: |
-          cd ${{matrix.page}}
-          npm install
+        run: npm install
 
       - name: Run build scripts
-        run: |
-          cd ${{matrix.page}}
-          npm run build
+        run: npm run build
 
       - name: Push to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
