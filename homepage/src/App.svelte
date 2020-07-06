@@ -32,5 +32,5 @@
 <main>
   <img src="logo.png" alt="logo" />
   <p class="subtitle">1-up your DiamondFire experience</p>
-  <Button label="Downloads" />
+  <Button label="Downloads and hello world!" />
 </main>
