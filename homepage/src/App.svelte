@@ -36,9 +36,9 @@
 <main>
   <img src="logo.png" alt="logo" class="centred"/>
   <p class="subtitle">1-up your DiamondFire experience</p>
-  <Button label="Download" href="https://dfplusplus.github.io/webpage/downloads/" important/>
-  <Button label="All downloads" href="https://dfplusplus.github.io/webpage/downloads/"/>
-  <Button label="Features" href="https://dfplusplus.github.io/webpage/features/"/>
-  <Button label="Credits" href="https://dfplusplus.github.io/webpage/credits/"/>
-  <Button label="Source" href="https://github.com/dfplusplus/mod" newWindow/>
+  <Button title="Download" href="https://dfplusplus.github.io/webpage/downloads/" important subtitle="BETA-5"/>
+  <Button title="All downloads" href="https://dfplusplus.github.io/webpage/downloads/"/>
+  <Button title="Features" href="https://dfplusplus.github.io/webpage/features/"/>
+  <Button title="Credits" href="https://dfplusplus.github.io/webpage/credits/"/>
+  <Button title="Source" href="https://github.com/dfplusplus/mod" newWindow/>
 </main>
