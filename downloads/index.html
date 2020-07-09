@@ -13,5 +13,28 @@
     <script defer src="build/bundle.js"></script>
   </head>
 
-  <body></body>
+  <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDNHGUJEAakuLAFcSfbPNMvlq9aFDWkW9U",
+        authDomain: "dfplusplus.firebaseapp.com",
+        databaseURL: "https://dfplusplus.firebaseio.com",
+        projectId: "dfplusplus",
+        storageBucket: "dfplusplus.appspot.com",
+        messagingSenderId: "750222572518",
+        appId: "1:750222572518:web:7bb067b8cc91bea85df427"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </body>
 </html>
