@@ -31,7 +31,7 @@
 		<Title text={title}></Title>
 		{#each releases as release}
 			{#if release[rank] != undefined}
-				<Button href={release[rank]} title="v{release.release} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
+				<Button href={release[rank]} title="v{release.release.replace(/-/g,".")} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
 			{/if}
 		{/each}
 	{/await}
