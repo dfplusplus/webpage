@@ -1,9 +1,14 @@
 <script>
+	export let rank;
+	let title = "Downloads";
+	if (rank != "default") title = `Downloads for ${rank}`
+
 	import Background from "../../public-components/Background.svelte";
 	import Button from "../../public-components/Button.svelte";
+	import Title from "../../public-components/Title.svelte";
 	
 	let releasesPromise = getReleases();
-	  
+
 	async function getReleases() {
 		let releasesSnapshot = await firebase.database().ref("releases").once('value');
 		let releases = releasesSnapshot.val();
@@ -21,10 +26,13 @@
 
 <main>
 	{#await releasesPromise}
-		<p>Getting downloads</p>
+		<Title text="Getting Downloads..."></Title>
 	{:then releases}
+		<Title text={title}></Title>
 		{#each releases as release}
-			<Button href={release.default} title="v{release.release}" important={release.recommended}></Button>
+			{#if release[rank] != undefined}
+				<Button href={release[rank]} title="v{release.release} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
+			{/if}
 		{/each}
 	{/await}
 </main>
