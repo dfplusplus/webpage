@@ -6,7 +6,7 @@
     p {
         color: #EB2A00;
         margin-top: 100px;
-        font-size: 40px;
+        font-size: 60px;
         font-family: 'Viga';
         text-align: center;
     }
