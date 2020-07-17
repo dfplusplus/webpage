@@ -21,19 +21,31 @@
 	}
 </script>
 
+<style>
+	p {
+        color: #EB2A00;
+        font-size: 20px;
+        font-family: 'Viga';
+        text-align: center;
+	}
+</style>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
 <Background />
 <Navbar/>
 
 <main>
+	<Title text="Downloads"></Title>
 	{#await releasesPromise}
-		<Title text="Getting Downloads..."></Title>
+		<p>Fetching...</p>
 	{:then releases}
-		<Title text={title}></Title>
 		{#each releases as release}
 			{#if release[rank] != undefined}
 				<Button href={release[rank]} title="v{release.release.replace(/-/g,".")} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
 			{/if}
 		{/each}
+	{:catch error}
+		<p>Could not fetch downloads</p>
+		<p>{error}</p>
 	{/await}
 </main>
