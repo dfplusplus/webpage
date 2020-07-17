@@ -6,6 +6,7 @@
 	import Background from "../../public-components/Background.svelte";
 	import Button from "../../public-components/Button.svelte";
 	import Title from "../../public-components/Title.svelte";
+	import Navbar from "../../public-components/Navbar.svelte";
 	
 	let releasesPromise = getReleases();
 
@@ -22,6 +23,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
 <Background />
+<Navbar/>
 
 <main>
 	{#await releasesPromise}
