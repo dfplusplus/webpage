@@ -5,7 +5,7 @@
 <style>
     p {
         color: #EB2A00;
-        margin-top: 50px;
+        margin-top: 100px;
         font-size: 40px;
         font-family: 'Viga';
         text-align: center;
