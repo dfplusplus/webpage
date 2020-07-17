@@ -16,7 +16,6 @@
 		let recommended = recommendedSnapshot.val();
 		releases[recommended].recommended = true;
 		
-		console.log(Object.values(releases));
 		return Object.values(releases).reverse();
 	}
 </script>
