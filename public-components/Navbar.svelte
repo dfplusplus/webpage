@@ -7,6 +7,12 @@
         position: fixed;
     }
 
+    @media (max-width: 700px) {
+        nav {
+            display: none;
+        }
+    }
+
     ul {
         display: flex;
         flex-direction: row;
