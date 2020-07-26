@@ -44,10 +44,10 @@
   <RuledTitle text="Staff Chat Shortcuts" />
   <p>
     For those with access to staff chats, it can be easy to mix up which chat
-    you're sending to, and typing /sb still remains a hassle. With DF++, you can
-    assign a key to open support chat as easily as any other chat! To avoid
-    confusion, the chat is also highlighted so you always know which chat you're
-    sending to!
+    you're sending to, and typing /sb each time still remains a hassle. With
+    DF++, you can assign a key to open support chat as easily as any other chat!
+    To avoid confusion, the chat is also highlighted so you always know which
+    chat you're sending to!
   </p>
   <br />
   <br />
