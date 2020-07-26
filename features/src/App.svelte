@@ -10,7 +10,6 @@
     margin: auto;
     width: 650px;
   }
-  h1,
   p {
     font-family: "Viga";
     text-align: center;
