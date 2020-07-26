@@ -5,6 +5,7 @@
     top: 0px;
     left: 0px;
     position: fixed;
+    z-index: 1;
   }
 
   @media (max-width: 700px) {

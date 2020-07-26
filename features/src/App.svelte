@@ -25,9 +25,18 @@
   <Title text="Features" />
   <RuledTitle text="Chat Splitting" />
   <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem quo natus
-    nesciunt tempora placeat quaerat, laudantium quia nostrum non nulla,
-    necessitatibus optio adipisci magni animi dolor esse ipsa! Dolor,
-    reprehenderit.
+    Ever found your main chat getting cluttered? Keeps things organised by
+    shifting the stuff you want to see to a secondary chats. That's right!
+    There's now two chats.
+  </p>
+  <br />
+  <p>
+    Contains built in support for /msg messages, and all staff chats. If that's
+    not enough you can also define a custom filter for the stuff you want.
+  </p>
+  <br />
+  <p>
+    You can also apply a sound effect to each chat, to get a little 'ding' each
+    time somebody says your name.
   </p>
 </main>
