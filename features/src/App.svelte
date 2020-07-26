@@ -23,6 +23,7 @@
 <Navbar />
 <main>
   <Title text="Features" />
+
   <RuledTitle text="Chat Splitting" />
   <p>
     Ever found your main chat getting cluttered? Keeps things organised by
@@ -39,4 +40,19 @@
     You can also apply a sound effect to each chat, to get a little 'ding' each
     time somebody says your name.
   </p>
+  <br />
+
+  <RuledTitle text="Staff Chat Shortcuts" />
+  <p>
+    For those with access to staff chats, it can be easy to mix up which chat
+    you're sending to, and typing /sb still remains a hassle. With DF++, you can
+    assign a key to open support chat as easily as any other chat! To avoid
+    confusion, the chat is also highlighted so you always know which chat you're
+    sending to!
+  </p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 </main>
