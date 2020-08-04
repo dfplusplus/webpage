@@ -17,7 +17,15 @@
 		let recommended = recommendedSnapshot.val();
 		releases[recommended].recommended = true;
 		
-		return Object.values(releases).reverse();
+		let releasesArray = Object.values(releases);
+		releasesArray.sort((a,b) => {
+			if (a.mcRelease == b.mcRelease) {
+				return a.release < b.release
+			} else {
+				return a.mcRelease < b.mcRelease;
+			}
+		})
+		return releasesArray;
 	}
 </script>
 
