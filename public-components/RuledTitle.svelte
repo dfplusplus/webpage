@@ -15,7 +15,7 @@
   h1::before {
     content: "";
     position: absolute;
-    height: 5px;
+    height: 3px;
     bottom: 20px;
     left: 0px;
     width: 100%;
