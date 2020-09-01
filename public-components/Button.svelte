@@ -61,7 +61,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
 <div class="button-container">
-  <a {href} target={newWindow ? "_blank" : "_self"}>
+  <a href = "{href ? href : "javascript:void(0)"}" target={newWindow ? "_blank" : "_self"} on:click>
     <div class="button" style="
       --background-color:{backgroundColor};
       --background-hover-color:{backgroundColorHover};
