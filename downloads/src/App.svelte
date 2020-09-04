@@ -1,12 +1,13 @@
 <script>
 	export let rank;
 	let title = "Downloads";
-	if (rank != "default") title = `Downloads for ${rank}`
+	if (rank != "default") title = `${toTitleCase(rank)} Downloads`
 
 	import Background from "../../public-components/Background.svelte";
 	import Button from "../../public-components/Button.svelte";
 	import Title from "../../public-components/Title.svelte";
 	import Navbar from "../../public-components/Navbar.svelte";
+	import DownloadManager from "../../public-components/DownloadManager.svelte";
 	
 	let releasesPromise = getReleases();
 
@@ -23,6 +24,13 @@
 		})
 		return releasesArray;
 	}
+
+	function toTitleCase(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
+	let displayRelease = null;
+	let displayRank = null;
 </script>
 
 <style>
@@ -37,15 +45,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
 <Background />
 <Navbar/>
+<DownloadManager release = {displayRelease} rank = {displayRank}/>
 
 <main>
-	<Title text="Downloads"></Title>
+	<Title text={title}></Title>
 	{#await releasesPromise}
 		<p>Fetching...</p>
 	{:then releases}
 		{#each releases as release}
 			{#if release[rank] != undefined}
-				<Button href={release[rank]} title="v{release.release.replace(/-/g,".")} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
+				<Button on:click="{e => {displayRelease = release; displayRank = rank}}" title="v{release.release.replace(/-/g,".")} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
 			{/if}
 		{/each}
 	{:catch error}
