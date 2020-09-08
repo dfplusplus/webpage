@@ -1,6 +1,9 @@
 <script>
   import Background from "../../public-components/Background.svelte";
   import Button from "../../public-components/Button.svelte";
+  import DownloadManager from "../../public-components/DownloadManager.svelte";
+
+  let release = null;
 
   async function getLatestRelease() {
 		let releasesSnapshot = await firebase.database().ref("releases").once('value');
@@ -40,6 +43,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
 <Background />
+<DownloadManager {release} rank="default" />
 
 <main>
   <img src="logo.png" alt="logo" class="centred"/>
@@ -47,7 +51,7 @@
   {#await getLatestRelease()}
     <Button title="Download" href="" important subtitle="Retrieving Recommended Download..."/>
   {:then latestRelease}
-    <Button title="Download" href={latestRelease["default"]} important subtitle="v{latestRelease.release.replace(/-/g,".")} for {latestRelease.mcRelease}"/>
+    <Button title="Download" href="" on:click = {() => {release = latestRelease}}  important subtitle="v{latestRelease.release.replace(/-/g,".")} for {latestRelease.mcRelease}"/>
   {/await}
   <Button title="All downloads" href="https://dfplusplus.github.io/webpage/downloads/"/>
   <Button title="Features" href="https://dfplusplus.github.io/webpage/features/"/>
