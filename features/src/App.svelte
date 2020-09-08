@@ -15,6 +15,10 @@
     text-align: center;
     color: #eb2a00;
   }
+
+  img {
+    width: 100%;
+  }
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga" />
@@ -30,6 +34,8 @@
     There's now two chats.
   </p>
   <br />
+  <img src="features1.png" alt="Demo of chat sides"/>
+  <br />
   <p>
     Contains built in support for /msg messages, and all staff chats. If that's
     not enough you can also define a custom filter for the stuff you want.
@@ -39,15 +45,38 @@
     You can also apply a sound effect to each chat, to get a little 'ding' each
     time somebody says your name.
   </p>
+  <p>
+    Fine-tine the sizing of this second chat with an ingame screen.
+  </p>
+  <img src="features5.png" alt="Demo of chat settings"/>
   <br />
 
   <RuledTitle text="Staff Chat Shortcuts" />
   <p>
-    For those with access to staff chats, it can be easy to mix up which chat
-    you're sending to, and typing /sb each time still remains a hassle. With
-    DF++, you can assign a key to open support chat as easily as any other chat!
-    To avoid confusion, the chat is also highlighted so you always know which
-    chat you're sending to!
+    Send messages to staff chats instantly with a keybind!
+  </p>
+  <img src="features2.png" alt="Demo of chat rooms"/>
+  <p>
+    Acts like normal chat, but will be sent to support chat. Bind it to any key you want.
+  </p>
+  <p>
+    Available for all staff chat rooms.
+  </p>
+  <br />
+
+  <RuledTitle text="Complete Compatibility" />
+  <p>
+    All updates available for both Fabric and Forge loaders. No need to pick and choose!
+  </p>
+  <br />
+
+  <RuledTitle text="Command Keybinds" />
+  <p>
+    Perform other common commands with just a keybind!
+  </p>
+  <img src="features3.png" alt="Demo of command keybinds"/>
+  <p>
+    More coming soon...
   </p>
   <br />
   <br />
