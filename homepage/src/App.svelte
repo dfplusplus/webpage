@@ -55,6 +55,6 @@
   {/await}
   <Button title="All downloads" href="https://dfplusplus.github.io/webpage/downloads/"/>
   <Button title="Features" href="https://dfplusplus.github.io/webpage/features/"/>
-  <Button title="Credits" href="https://dfplusplus.github.io/webpage/credits/"/>
+  <Button title="Discord" href="https://discord.gg/jCut7VQ" newWindow/>
   <Button title="Source" href="https://github.com/dfplusplus/mod" newWindow/>
 </main>

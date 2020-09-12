@@ -65,7 +65,7 @@
       <a href="https://dfplusplus.github.io/webpage/features/">Features</a>
     </li>
     <li>
-      <a href="https://dfplusplus.github.io/webpage/credits/">Credits</a>
+      <a href="https://discord.gg/jCut7VQ" target="_blank">Discord</a>
     </li>
     <li>
       <a href="https://github.com/dfplusplus/mod" target="_blank">Source</a>
