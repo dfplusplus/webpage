@@ -51,6 +51,16 @@
   <img src="features5.png" alt="Demo of chat settings"/>
   <br />
 
+  <RuledTitle text="Code Hints" />
+  <p>
+    While looking at a code block, hold a key to get instant parameter hints!
+  </p>
+  <img src="features6.png" alt="Demo of chat rooms"/>
+  <p>
+    Special thanks to lukecashwell for the code!
+  </p>
+  <br />
+
   <RuledTitle text="Staff Chat Shortcuts" />
   <p>
     Send messages to staff chats instantly with a keybind!
