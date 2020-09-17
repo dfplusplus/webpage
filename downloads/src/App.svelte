@@ -9,6 +9,8 @@
 	import Navbar from "../../public-components/Navbar.svelte";
 	import DownloadManager from "../../public-components/DownloadManager.svelte";
 	
+	import { slide } from 'svelte/transition';
+	
 	let releasesPromise = getReleases();
 
 	async function getReleases() {
@@ -22,6 +24,15 @@
 		releasesArray.sort((a,b) => {
 			return b.timestamp - a.timestamp;
 		})
+		releasesArray.reduce((foundRecommended, cur) => {
+			if (cur.recommended) { // flips accumulator from false to true
+				cur.old = false;
+				return true;
+			}
+			cur.old = foundRecommended;
+			return foundRecommended;
+		}, false)
+		console.log(releasesArray);
 		return releasesArray;
 	}
 
@@ -29,16 +40,27 @@
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
+	function toggleOlder() {
+		console.log("hi")
+		displayOlder = !displayOlder;
+	}
+
+	let displayOlder = false;
 	let displayRelease = null;
 	let displayRank = null;
 </script>
 
 <style>
-	p {
+	p, a {
         color: #EB2A00;
         font-size: 20px;
         font-family: 'Viga';
         text-align: center;
+	}
+
+	#older {
+		display: flex;
+		justify-content: center;
 	}
 </style>
 
@@ -53,10 +75,16 @@
 		<p>Fetching...</p>
 	{:then releases}
 		{#each releases as release}
-			{#if release[rank] != undefined}
+			{#if release[rank] && (!release.old || displayOlder)}
+			<!-- dummy div just here for the transition -->
+			<div transition:slide>
 				<Button on:click="{e => {displayRelease = release; displayRank = rank}}" title="v{release.release.replace(/-/g,".")} for {release.mcRelease}" important={release.recommended} subtitle={release.recommended ? "Recommended Download" : release.notes}></Button>
+			</div>
 			{/if}
 		{/each}
+		<div id="older">
+			<a href="{"javascript:void(0)"}" on:click="{toggleOlder}">{displayOlder ? "Hide" : "Show"} Older...</a>
+		</div>
 	{:catch error}
 		<p>Could not fetch downloads</p>
 		<p>{error}</p>
