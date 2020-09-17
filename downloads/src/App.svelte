@@ -41,7 +41,6 @@
 	}
 
 	function toggleOlder() {
-		console.log("hi")
 		displayOlder = !displayOlder;
 	}
 
