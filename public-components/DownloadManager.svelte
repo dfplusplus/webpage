@@ -56,8 +56,12 @@
                 <p>{release.notes}</p>
                 <!-- Newer releases are an object with forge & fabric fields. Old releases just contain a string URL to forge -->
                 {#if typeof(release[rank]) == "object"} 
-                    <Button important title="Forge Download" href="{release[rank].forge};"/>
-                    <Button important title="Fabric Download" href="{release[rank].fabric};"/>
+                    {#if release[rank].forge}
+                        <Button important title="Forge Download" href="{release[rank].forge};"/>
+                    {/if}
+                    {#if release[rank].fabric}
+                        <Button important title="Fabric Download" href="{release[rank].fabric};"/>
+                    {/if}
                 {:else}
                     <Button important title="Forge Download" href="{release[rank]};"/>
                 {/if}
